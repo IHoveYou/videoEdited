@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField 'String', 'BASE_URL', "\"https://api.csjc19.com/\""
+            buildConfigField 'String', 'H5_URL', "\"https://h5.csjc19.com/\""
+            buildConfigField 'String', 'DATA_URL', "\"https://social.csjc19.com:4006/sa?project=production\""
+            buildConfigField 'String', 'WEB_URL', "\"http://manage.csjc19.com/\""
+        }
+
+        debug {
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [
+                    NETWORK_SECURITY_CONFIG: "@xml/network_security_config"
+            ]
+
+            buildConfigField 'String', 'BASE_URL', "\"https://activity.csjc19.com/\""
+            buildConfigField 'String', 'H5_URL', "\"http://testh5.csjc19.com/\""
+            buildConfigField 'String', 'DATA_URL', "\"https://social.csjc19.com:4006/sa?project=production\""
+            buildConfigField 'String', 'WEB_URL', "\"http://premanage.csjc19.com:8080/\""
+        }
+
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    api project(path: ':lxybaselibrary')
+}

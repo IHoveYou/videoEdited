@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/ll_left"
+            android:paddingLeft="@dimen/margin"
+            android:paddingRight="@dimen/margin"
+            android:layout_width="100dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/arrow_left" />
+
+            <com.duoyi.lxybaselibrary.widget.textview.TwoTextView
+                android:id="@+id/tv_leftText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:text="" />
+
+        <LinearLayout
+            android:paddingLeft="@dimen/margin"
+            android:paddingRight="@dimen/margin"
+            android:id="@+id/ll_right"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="right">
+
+            <com.duoyi.lxybaselibrary.widget.textview.TwoTextView
+                android:id="@+id/tv_rightText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="" />
+
+            <ImageView
+                android:id="@+id/iv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/arrow_left"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

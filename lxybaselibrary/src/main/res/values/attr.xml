@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyRCImageView">
+        <attr name="url" format="string"></attr>
+        <attr name="err" format="reference"></attr>
+    </declare-styleable>
+
+</resources>

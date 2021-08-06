@@ -1,0 +1,97 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'boolean', 'isDebug', "false"
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'boolean', 'isDebug', "true"
+        }
+    }
+    dataBinding  {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api 'androidx.appcompat:appcompat:1.2.0'
+    api 'com.google.android.material:material:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
+    api 'androidx.recyclerview:recyclerview:1.1.0'
+    api 'de.greenrobot:eventbus:3.0.0-beta1'
+    api 'com.squareup.retrofit2:converter-gson:2.1.0'
+    api("com.squareup.okhttp3:okhttp:4.9.0")
+    api 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    api 'com.squareup.retrofit2:retrofit:2.1.0'
+
+    api 'com.squareup.retrofit2:adapter-rxjava:2.9.0'
+    api 'io.reactivex:rxjava:1.3.3'
+    api 'io.reactivex:rxandroid:1.1.0'
+
+    api 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.9'
+    api 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'//相册
+
+    api 'com.gcssloop.widget:rclayout:1.8.1'
+
+    api 'com.github.bumptech.glide:glide:4.11.0'                   //图片加载
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
+
+    api  'com.scwang.smart:refresh-layout-kernel:2.0.1'//刷新控件
+    api  'com.scwang.smart:refresh-header-classics:2.0.1'//经典刷新头
+    api  'com.scwang.smart:refresh-footer-classics:2.0.1'    //经典加载
+
+
+
+    api('com.github.HuanTanSheng:EasyPhotos:3.1.3'){
+        exclude group:'top.zibin:Luban'
+    }  //androidx版本，支持android 10、11，永久维护
+
+    implementation 'com.upyun:upyun-android-sdk:2.1.4'
+
+    implementation 'top.zibin:Luban:1.1.8'
+
+    api 'com.fyales.android:library:1.0.2'
+
+    //    oppo
+
+    api files('libs\\com.heytap.msp.aar')
+    api files('libs\\vivo_pushSDK_v3.0.0.2_482.aar')
+    api files('libs\\MiPush_SDK_Client_4_2_0.jar')
+
+
+}

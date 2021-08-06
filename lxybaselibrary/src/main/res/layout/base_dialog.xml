@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:paddingTop="28dp"
+            android:layout_centerInParent="true"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_10_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="这是标题"
+                android:textColor="#ff333333"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_Tost"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="结束问诊前需提前告知用户，达成一致意见"
+                android:textColor="#ff999999"
+                android:textSize="13sp"
+                />
+
+            <com.duoyi.lxybaselibrary.widget.textview.OneTextView
+                android:layout_marginTop="19dp"
+                android:layout_marginHorizontal="10dp"
+                android:textSize="13dp"
+                android:id="@+id/tvConent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="内容" />
+
+            <View
+                android:layout_marginTop="28dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:textSize="17dp"
+                    android:id="@+id/tv_leftText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/tv_title"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="取消"
+                    android:textColor="#999999" />
+
+                <View
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/v"
+                    android:layout_width="0.5dp"
+                    android:layout_height="33dp"
+                    android:background="@color/line" />
+
+                <TextView
+                    android:id="@+id/tv_rightText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/tv_title"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="17dp"
+                    android:text="确定"
+                    android:textColor="#1EC2C2" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>
